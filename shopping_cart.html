@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom E-commerce Template</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="sticky top-0 z-50 bg-white drop-shadow-sm py-2 px-4">
+
+        <div class="flex items-center justify-between px-4 lg:px-10 py-2">
+
+            <!-- Left -->
+            <div class="flex items-center gap-12">
+
+                <a href="index.html">
+                    <h1 class="text-black text-[25px] font-bold[10px]">
+                        BLOOM<span class="text-orange-400">SHOP</span>
+                    </h1>
+                </a>
+
+                <a href="contact.html"
+                    class="hidden sm:inline-block px-4 py-2 rounded-full hover:bg-gray-100 transition">
+
+                    <h1 class="text-sm font-semibold text-gray-700">
+                        Contact
+                    </h1>
+
+                </a>
+
+            </div>
+
+            <!-- Search -->
+            <div class="hidden md:block relative">
+
+                <i class="fas fa-search absolute top-1/2 -translate-y-1/2 left-3 text-sm text-gray-400"></i>
+
+                <input
+                    class="border border-gray-300 rounded-full pl-10 pr-4 py-2 text-sm w-105 outline-none focus:border-orange-400 text-gray-700 text-shadow-2xs text-[14px] tracking-wide"
+                    type="text" placeholder="Search products...">
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-2 text-gray-500">
+
+                <!-- Mobile Search -->
+                <button id="search-btn"
+                    class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition sm:hidden">
+
+                    <i class="fas fa-search text-lg"></i>
+
+                </button>
+
+                <!-- Menu -->
+                <button
+                    class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition sm:hidden">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+
+                <!-- Cart -->
+                <a href="shopping_cart.html"
+                    class="inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 transition relative">
+
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <span id="cart-badge" class="hidden absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+
+                </a>
+
+                <!-- Sign In -->
+                <button
+                    class="hidden sm:block text-sm px-4 py-2 rounded-full hover:bg-orange-50 hover:text-amber-700 transition font-semibold">
+                    Sign In
+                </button>
+
+                <!-- Sign Up -->
+                <button
+                    class="hidden sm:block bg-amber-500 hover:bg-amber-400 transition px-4 py-1.5 rounded-full font-semibold text-black text-sm">
+                    Sign Up
+                </button>
+
+                <!-- User -->
+                <a href="./user.html"
+                    class="inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 transition">
+
+                    <i class="fa-regular fa-user text-lg"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Search Box -->
+        <div id="search-box" class="hidden px-4 pb-3 md:hidden relative">
+
+            <i class="fas fa-search absolute left-7 top-1/2 -translate-y-2.5 text-xs text-gray-400"></i>
+
+            <input class="w-full border border-gray-300 rounded-full py-2 pl-8 pr-4 text-sm outline-none" type="text"
+                placeholder="Search Products..">
+
+        </div>
+
+    </nav>
+
+    <!-- Cart items will be shown here by JS -->
+    <div id="shopping_cart"></div>
+
+    <!--  Main Cart Script — reads from localStorage and shows all items -->
+    <script src="./script.js"></script>
+
+    <script>
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const shopping_cart = document.getElementById("shopping_cart");
+
+        if (cart.length === 0) {
+
+            shopping_cart.innerHTML = `
+                <div class="flex flex-col items-center justify-center py-24 text-center">
+                    <i class="ri-shopping-cart-line text-6xl text-gray-300 mb-4"></i>
+                    <h2 class="text-2xl font-semibold text-gray-400">Your cart is empty</h2>
+                    <p class="text-gray-400 mt-2">Add some products first!</p>
+                    <a href="index.html">
+                        <button class="mt-6 px-6 py-2 bg-amber-500 hover:bg-amber-400 rounded-full font-semibold">
+                            Browse Products
+                        </button>
+                    </a>
+                </div>
+            `;
+
+        } else {
+
+            renderCart();
+        }
+
+
+        // Function: show the cart on the screen
+     
+        function renderCart() {
+
+            cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            if (cart.length === 0) {
+                shopping_cart.innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-24 text-center">
+                        <i class="ri-shopping-cart-line text-6xl text-gray-300 mb-4"></i>
+                        <h2 class="text-2xl font-semibold text-gray-400">Your cart is empty</h2>
+                        <p class="text-gray-400 mt-2">Add some products first!</p>
+                        <a href="index.html">
+                            <button class="mt-6 px-6 py-2 bg-amber-500 hover:bg-amber-400 rounded-full font-semibold">
+                                Browse Products
+                            </button>
+                        </a>
+                    </div>
+                `;
+                updateCartBadge();
+                return;
+            }
+
+
+            let subtotal = cart.reduce((total, item) => total + (item.price * item.qty), 0);
+            let tax = subtotal * 0.08;
+            let grandTotal = subtotal + tax;
+
+
+            let itemsHTML = cart.map((item, index) => {
+                return `
+                    <div class="flex items-center justify-between border-b border-gray-100 py-4 gap-4">
+
+                        <img src="${item.image}" class="w-20 h-20 object-cover rounded-2xl flex-shrink-0" alt="">
+
+                        <div class="flex-1 mx-3">
+                            <h2 class="font-semibold">${item.name}</h2>
+                            <p class="text-gray-500 text-sm">$${item.price.toFixed(2)} each</p>
+
+                            <!-- Quantity buttons -->
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="decreaseQty(${index})"
+                                    class="w-7 h-7 border border-gray-200 rounded-full text-lg hover:bg-red-50 hover:text-red-500">−</button>
+                                <span class="w-6 text-center font-semibold">${item.qty}</span>
+                                <button onclick="increaseQty(${index})"
+                                    class="w-7 h-7 border border-gray-200 rounded-full text-lg hover:bg-green-50 hover:text-green-500">+</button>
+                            </div>
+                        </div>
+
+                        <div class="text-right">
+                            <p class="font-bold text-lg">$${(item.price * item.qty).toFixed(2)}</p>
+                            <!-- Delete button -->
+                            <button onclick="deleteItem(${index})"
+                                class="mt-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full px-2 py-1 text-sm">
+                                <i class="ri-delete-bin-line"></i> Remove
+                            </button>
+                        </div>
+
+                    </div>
+                `;
+            }).join("");
+
+
+            shopping_cart.innerHTML = `
+
+                <div class="flex flex-col md:flex-row md:mx-16 mx-2 pt-10 justify-between">
+                    <div>
+                        <h1 class="md:text-3xl text-2xl font-semibold"">Shopping Cart</h1>
+                        <p class="py-2 text-gray-600">${cart.length} item(s) in your cart</p>
+                    </div>
+                    <a href="index.html" class="hover:text-black rounded-full hover:bg-amber-100 text-sm text-gray-600 pe-6 h-7 mt-4 flex items-center">
+                        <i class="ri-arrow-left-long-line mx-2"></i>
+                        Continue Shopping
+                    </a>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:mx-16 mx-2 py-10 gap-8 md:items-start justify-center">
+
+                    <!-- Left: Cart Items -->
+                    <div class="flex-2 rounded-4xl border border-gray-300 p-5 shadow-2xs">
+
+                        <div class="flex justify-between items-center mb-2">
+                            <h1 class="text-xl font-semibold">Cart Items</h1>
+                            <!-- Clear All button -->
+                            <button onclick="clearAll()"
+                                class="text-sm text-gray-500 hover:text-red-500 hover:bg-red-50 rounded-full px-3 py-1">
+                                <i class="ri-delete-bin-line"></i> Clear All
+                            </button>
+                        </div>
+
+                        <!-- All items shown here -->
+                        ${itemsHTML}
+
+                    </div>
+
+                    <!-- Right: Order Summary -->
+                    <div class="flex-1 rounded-4xl border border-gray-300 p-5 shadow-2xs">
+
+                        <h1 class="font-semibold text-xl mb-6">Order Summary</h1>
+
+                        <div class="flex justify-between text-[15px]">
+                            <div class="space-y-2 text-gray-500">
+                                <p>Subtotal (${cart.reduce((t, i) => t + i.qty, 0)} items)</p>
+                                <p>Shipping</p>
+                                <p>Tax (8%)</p>
+                            </div>
+                            <div class="space-y-2 text-gray-800 text-right">
+                                <p class="font-semibold">$${subtotal.toFixed(2)}</p>
+                                <p class="rounded-full bg-gray-200 px-3 text-[13px] font-semibold text-gray-600">Free</p>
+                                <p class="font-semibold">$${tax.toFixed(2)}</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-3 text-gray-200">
+
+                        <div class="flex justify-between my-2">
+                            <h1 class="text-xl font-semibold">Total</h1>
+                            <p class="text-xl font-semibold text-amber-500">$${grandTotal.toFixed(2)}</p>
+                        </div>
+
+                        <button class="w-full rounded-full bg-amber-500 p-2 my-2 font-semibold hover:bg-amber-400 cursor-pointer">
+                            <i class="ri-todo-line"></i> Proceed to Checkout
+                        </button>
+
+                        <hr class="my-2 text-gray-200">
+
+                        <div class="text-[15px] space-y-2 mt-3">
+                            <p class="text-gray-600"><i class="ri-secure-payment-line mx-2 text-green-700 text-[17px]"></i>Secure SSL checkout</p>
+                            <p class="text-gray-600"><i class="ri-truck-line mx-2 text-blue-500 text-[17px]"></i>Free returns within 30 days</p>
+                            <p class="text-gray-600"><i class="ri-heart-line mx-2 text-red-500 text-[17px]"></i>24/7 customer support</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+            updateCartBadge();
+        }
+
+
+        function deleteItem(index) {
+
+
+            cart.splice(index, 1);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            renderCart();
+        }
+
+
+
+        function increaseQty(index) {
+            cart[index].qty = cart[index].qty + 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+
+        function decreaseQty(index) {
+            if (cart[index].qty > 1) {
+                cart[index].qty = cart[index].qty - 1;
+            } else {
+               
+                cart.splice(index, 1);
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+
+        function clearAll() {
+            localStorage.removeItem("cart");
+            renderCart();
+        }
+
+
+
+        function updateCartBadge() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let totalItems = cart.reduce((total, item) => total + item.qty, 0);
+            let badge = document.getElementById("cart-badge");
+            if (badge) {
+                if (totalItems > 0) {
+                    badge.innerText = totalItems;
+                    badge.classList.remove("hidden");
+                } else {
+                    badge.classList.add("hidden");
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

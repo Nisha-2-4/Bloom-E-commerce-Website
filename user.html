@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom E-commerce Template</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-linear-to-b from-pink-50 via-white-50 to-white min-h-screen">
+    <!-- navbar  -->
+    <nav class="sticky top-0 z-50 bg-white drop-shadow-sm py-2 px-4">
+
+        <div class="flex items-center justify-between px-4 lg:px-10 py-2">
+
+            <!-- Left -->
+            <div class="flex items-center gap-12">
+
+                <a href="index.html">
+                    <h1 class="text-black text-[25px] font-bold[10px]">
+                        BLOOM<span class="text-orange-400">SHOP</span>
+                    </h1>
+                </a>
+
+                <a href="contact.html"
+                    class="hidden sm:inline-block px-4 py-2 rounded-full hover:bg-gray-100 transition">
+
+                    <h1 class="text-sm font-semibold text-gray-700">
+                        Contact
+                    </h1>
+
+                </a>
+
+            </div>
+
+            <!-- Search -->
+            <div class="hidden md:block relative">
+
+                <i class="fas fa-search absolute top-1/2 -translate-y-1/2 left-3 text-sm text-gray-400"></i>
+
+                <input
+                    class="border border-gray-300 rounded-full pl-10 pr-4 py-2 text-sm w-105 outline-none focus:border-orange-400 text-gray-700 text-shadow-2xs text-[14px] tracking-wide"
+                    type="text" placeholder="Search products...">
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-2 text-gray-500">
+
+                <!-- Mobile Search -->
+                <button id="search-btn"
+                    class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition sm:hidden">
+
+                    <i class="fas fa-search text-lg"></i>
+
+                </button>
+
+                <!-- Menu -->
+                <button
+                    class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition sm:hidden">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+
+                <!-- Cart -->
+                <a href="cart.html"
+                    class="inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 transition">
+
+                    <i class="fas fa-shopping-cart text-lg"></i>
+
+                </a>
+
+                <!-- Sign In -->
+                <button
+                    class="hidden sm:block text-sm px-4 py-2 rounded-full hover:bg-orange-50 hover:text-amber-700 transition font-semibold">
+                    Sign In
+                </button>
+
+                <!-- Sign Up -->
+                <button
+                    class="hidden sm:block bg-amber-500 hover:bg-amber-400 transition px-4 py-1.5 rounded-full font-semibold text-black text-sm">
+                    Sign Up
+                </button>
+
+                <!-- User -->
+                <a href="./user.html"
+                    class="inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 transition">
+
+                    <i class="fa-regular fa-user text-lg"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Search Box -->
+        <div id="search-box" class="hidden px-4 pb-3 md:hidden relative">
+
+            <i class="fas fa-search absolute left-7 top-1/2 -translate-y-2.5 text-xs text-gray-400"></i>
+
+            <input class="w-full border border-gray-300 rounded-full py-2 pl-8 pr-4 text-sm outline-none" type="text"
+                placeholder="Search Products..">
+
+        </div>
+
+    </nav>
+
+
+    <div class="md:mx-96 mx-10 py-24">
+        <div class="md:mx-28 mx-4 rounded-3xl border border-gray-200 shadow-2xs px-3 py-9">
+            <h1 class="text-black text-2xl font-bold[10px] text-shadow-2xs text-center pb-4">BLOOM<span
+                    class="text-orange-400">SHOP</span></h1>
+            <label class="block text py-2" for="Username">Username</label>
+            <input class="min-w-full  rounded-2xl p-2 outline-none border border-gray-200 shadow-2xs" type="text"
+                placeholder="Username">
+            <label class="block text py-2" for="Username">Password</label>
+            <input class="min-w-full rounded-2xl p-2 outline-none border border-gray-200 shadow-2xs" type="password"
+                placeholder="Password">
+            <button
+                class="font-semibold block mx-auto mt-6 bg-orange-500 hover:bg-amber-400 transition-all duration-200  px-6 py-2 rounded-3xl text-bold min-w-full">
+                Login
+            </button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

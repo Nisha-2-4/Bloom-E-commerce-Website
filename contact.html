@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-linear-to-b from-pink-50 via-white-50 to-white min-h-screen">
+
+    <!-- SAME NAVBAR -->
+
+    <nav class="sticky top-0 z-50 bg-white drop-shadow-sm py-2 px-4">
+
+        <div class="flex items-center justify-between px-4 lg:px-10 py-2">
+
+            <!-- Left -->
+            <div class="flex items-center gap-12">
+
+                <a href="index.html">
+                    <h1 class="text-black text-[25px] font-bold[10px]">
+                        BLOOM<span class="text-orange-400">SHOP</span>
+                    </h1>
+                </a>
+
+                <a href="contact.html"
+                    class="hidden sm:inline-block px-4 py-2 rounded-full hover:bg-gray-100 transition">
+
+                    <h1 class="text-sm font-semibold text-gray-700">
+                        Contact
+                    </h1>
+
+                </a>
+
+            </div>
+
+            <!-- Search -->
+            <div class="hidden md:block relative">
+
+                <i class="fas fa-search absolute top-1/2 -translate-y-1/2 left-3 text-sm text-gray-400"></i>
+
+                <input
+                    class="border border-gray-300 rounded-full pl-10 pr-4 py-2 text-sm w-105 outline-none focus:border-orange-400 text-gray-700 text-shadow-2xs text-[14px] tracking-wide"
+                    type="text" placeholder="Search products...">
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="flex items-center gap-2 text-gray-500">
+
+                <!-- Mobile Search -->
+                <button id="search-btn"
+                    class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition sm:hidden">
+
+                    <i class="fas fa-search text-lg"></i>
+
+                </button>
+
+                <!-- Menu -->
+                <button
+                    class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition sm:hidden">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+
+                <!-- Cart -->
+                <a href="cart.html"
+                    class="inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 transition">
+
+                    <i class="fas fa-shopping-cart text-lg"></i>
+
+                </a>
+
+                <!-- Sign In -->
+                <button
+                    class="hidden sm:block text-sm px-4 py-2 rounded-full hover:bg-orange-50 hover:text-amber-700 transition font-semibold">
+                    Sign In
+                </button>
+
+                <!-- Sign Up -->
+                <button
+                    class="hidden sm:block bg-amber-500 hover:bg-amber-400 transition px-4 py-1.5 rounded-full font-semibold text-black text-sm">
+                    Sign Up
+                </button>
+
+                <!-- User -->
+                <a href="./user.html"
+                    class="inline-flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 transition">
+
+                    <i class="fa-regular fa-user text-lg"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Search Box -->
+        <div id="search-box" class="hidden px-4 pb-3 md:hidden relative">
+
+            <i class="fas fa-search absolute left-7 top-1/2 -translate-y-2.5 text-xs text-gray-400"></i>
+
+            <input class="w-full border border-gray-300 rounded-full py-2 pl-8 pr-4 text-sm outline-none" type="text"
+                placeholder="Search Products..">
+
+        </div>
+
+    </nav>
+    <!-- contact details  -->
+
+    <div class="pt-24 text-center">
+        <button class="text-black text-sm bg-amber-500 px-2 font-semibold rounded-4xl text-center m-3">Get in
+            Touch</button>
+        <h1 class="font-bold text-4xl md:text-6xl my-2">We'd love to <span class="text-amber-500 ms-2"> hear from
+                <br> you</span></h1>
+        <p class="text-gray-500 my-5 text-xl text-shadow-2xs">Have a question, suggestion, or just want to say
+            hello? We're here to help and <br> would love to hear from you.</p>
+    </div>
+
+    <!-- send us a message  -->
+
+    <div class="flex flex-col md:flex-row mt-50 gap-10 justify-center items-start mx-4 md:mx-20">
+
+        <div class="max-w-4xl w-full rounded-3xl border border-gray-300 p-5.5 shadow-xl space-y-3">
+            <h1 class="text-2xl font-semibold ">Send us a message</h1>
+            <p class="text-gray-500">Fill out the form below and we'll get back to you as soon as possible.
+            </p>
+            <div class="flex flex-col md:flex-row gap-3">
+
+                <div class="flex-1">
+                    <label class="font-semibold">Your Name</label>
+                    <br>
+
+                    <input
+                        class="w-full rounded-4xl border border-gray-300 p-1 outline-none focus:border-amber-500 shadow-sm"
+                        type="text" placeholder="John Doe">
+                </div>
+
+                <div class="flex-1">
+                    <label class="font-semibold">Your Email</label>
+                    <br>
+
+                    <input
+                        class="w-full rounded-4xl border border-gray-300 p-1 outline-none focus:border-amber-500 shadow-sm"
+                        type="email" placeholder="John@example.com">
+                </div>
+
+            </div>
+            <div>
+                <label class="font-semibold" for="Subject">Subject</label>
+                <br>
+                <input
+                    class="rounded-4xl min-w-full border border-gray-300 p-1 outline-none focus:border-amber-500 resize-none shadow-sm"
+                    type="text" placeholder="How can we help you?">
+            </div>
+
+            <div>
+                <label class="font-semibold inline-block pb-2" for="message">
+                    Your Message
+                </label>
+                <br>
+                <textarea
+                    class="w-full h-40 rounded-2xl border border-gray-300 p-4 outline-none focus:border-amber-500 resize-none shadow-sm"
+                    placeholder="Tell us more about your question or concern.."></textarea>
+            </div>
+            <div class="mt-5">
+                <button class="bg-amber-500 rounded-xl py-1.5 px-7 font-semibold hover:bg-amber-400">
+                    <i class="ri-send-ins-line"></i>
+                    Send Message
+                </button>
+            </div>
+        </div>
+
+        <!-- contact Information -->
+
+        <div class="space-y-6 flex-1 mx-2 md:w-full w-full">
+
+            <div class="rounded-3xl border border-gray-300 p-5 shadow-xl">
+                <h1 class="text-[21px] font-semibold py-1 mb-5">Contact Information</h1>
+                <div class="flex space-x-3 mb-5">
+                    <div>
+                        <i class="ri-mail-line rounded-4xl p-2 bg-amber-100 text-xl text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[17px]">Email Us</h1>
+                        <p class="text-gray-600 text-[15px]">hello@bloomshop.com</p>
+                        <p class="text-gray-600 text-[15px]">support@bloomshop.com</p>
+                        <p class="text-gray-600 text-sm">Send us an email anytime</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-3 mb-5">
+                    <div>
+                        <i class="ri-phone-line rounded-4xl p-2 bg-amber-100 text-xl text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[17px]">Call Us</h1>
+                        <p class="text-gray-600 text-[15px]">+1 (555) 123-4567</p>
+                        <p class="text-gray-600 text-[15px]">+1 (555) 987-6543</p>
+                        <p class="text-gray-600 text-sm">Mon-Fri from 8am to 5pm</p>
+                    </div>
+                </div>
+                <div class="flex space-x-3 mb-5">
+                    <div>
+                        <i class="ri-map-pin-line rounded-4xl p-2 bg-amber-100 text-xl text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[17px]">Visit Us</h1>
+                        <p class="text-gray-600 text-[15px]">123 Fashion Street</p>
+                        <p class="text-gray-600 text-[15px]">Style City, SC 12345</p>
+                        <p class="text-gray-600 text-sm">Come say hello at our office</p>
+                    </div>
+                </div>
+                <div class="flex space-x-3">
+                    <div>
+                        <i class="fa-solid fa-alarm-clock rounded-4xl m-2 bg-amber-100 text-xl text-amber-500"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[17px]">Working Hours</h1>
+                        <p class="text-gray-600 text-[15px]">Monday - Friday: 9am - 6pm</p>
+                        <p class="text-gray-600 text-[15px]">Saturday: 10am - 4pm</p>
+                        <p class="text-gray-600 text-sm">Sunday: Closed</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- why contact us -->
+
+            <div class="rounded-3xl border border-gray-300 p-5 w-full md:w-96 shadow-xl">
+                <h1 class="mb-5 font-semibold text-xl">Why Contact Us</h1>
+                <div class="flex space-x-3 mb-5">
+                    <div>
+                        <i class="ri-customer-service-line rounded-4xl m-2 text-[17px] text-amber-700"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[14px]">24/7 Support</h1>
+                        <p class="text-gray-600 text-[13px]">Get help whenever you need it</p>
+                    </div>
+                </div>
+                <hr class="text-gray-400 mb-4">
+
+                <div class="flex space-x-3 mb-4">
+                    <div>
+                        <i class="ri-chat-4-line rounded-4xl m-2 text-[17px] text-amber-700"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[14px]">Quick Response</h1>
+                        <p class="text-gray-600 text-[13px]">We reply within 2 hours</p>
+                    </div>
+                </div>
+                <hr class="text-gray-400 mb-4">
+                <div class="flex space-x-3 mb-4">
+                    <div>
+                        <i class="ri-secure-payment-line rounded-4xl m-2 text-[17px] text-amber-700"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold text-[14px]">Secure & Private</h1>
+                        <p class="text-gray-600 text-[13px]">Your information is safe with us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+
+    <div class="mt-36">
+        <div class="text-center space-y-4">
+            <button class="font-semibold text-sm rounded-3xl border border-gray-300 px-2 outline-none">FAQ</button>
+            <h1 class="text-4xl font-bold">Frequently Asked Questions</h1>
+            <p class="text-xl text-gray-600">Find quick answers to common questions about our products and services.</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:mx-56 mx-2 mt-10 justify-between space-x-8 space-y-7">
+        <div class="flex-1 space-y-7">
+            <div class="space-y-2 border border-gray-300 rounded-3xl p-4 outline-none shadow-sm">
+                <h1 class="font-semibold">What are your shipping policies?</h1>
+                <p class="text-gray-500">We offer free shipping on orders over $50. Standard shipping takes 3-5 business
+                    days.</p>
+            </div>
+            <div class="space-y-2 border border-gray-300 rounded-3xl p-4 outline-none shadow-sm">
+                <h1 class="font-semibold">What is your return policy?</h1>
+                <p class="text-gray-500">We accept returns within 30 days of purchase. Items must be in original
+                    condition.</p>
+            </div>
+        </div>
+
+
+        <div class="flex-1 space-y-7">
+            <div class="space-y-2 border border-gray-300 rounded-3xl p-4 outline-none shadow-sm">
+                <h1 class="font-semibold">What are your shipping policies?</h1>
+                <p class="text-gray-500">We offer free shipping on orders over $50. Standard shipping takes 3-5 business
+                    days.</p>
+            </div>
+            <div class="space-y-2 border border-gray-300 rounded-3xl p-4 outline-none shadow-sm">
+                <h1 class="font-semibold">What is your return policy?</h1>
+                <p class="text-gray-500">We accept returns within 30 days of purchase. Items must be in original
+                    condition.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- still have questions -->
+
+    <div class="m-20 p-12 rounded-3xl border border-amber-200 bg-linear-to-b from-pink-50 via-white-50 to-white mb-36">
+        <div class="text-center">
+            <h1 class="text-4xl font-semibold">Still have questions?</h1>
+            <p class="text-gray-500 text-xl mt-4">Can't find what you're looking for? Our customer support team is here
+                to help.</p>
+            <div class="flex justify-center space-x-6 mt-7">
+                <button class="bg-amber-500 rounded-3xl px-6 py-1.5 hover:bg-amber-400 transition-all duration-200"><i
+                        class="ri-phone-line mx-2"></i>Call Us Now</button>
+                <button class="bg-white border border-gray-300 shadow-xl rounded-3xl px-6 py-1.5"><i
+                        class="ri-mail-line mx-2"></i>Live Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- stay in the center  -->
+    <hr class="mb-14 text-gray-200">
+    <div class="text-center justify-between">
+        <h1 class="text-black text-2xl font-bold mb-4">Stay in the loop</h1>
+        <p class="pb-5">Subscribe to our newsletter for exclusive offers, new arrivals, and style inspiration.</p>
+        <div class="">
+            <input class="pe-12 rounded-4xl ps-2 border border-gray-300 py-1 hover:border-amber-500 mb-2 md:pe-64"
+                type="text" placeholder="Enter your Email">
+            <span class="py-2 px-3.5 mx-2 bg-amber-500 rounded-2xl hover:bg-amber-400 transition-all duration-200"><i
+                    class="fa-solid fa-arrow-right"></i></span>
+        </div>
+    </div>
+
+    <hr class="my-10 mx-16 text-gray-300">
+
+    <div class="mx-12 flex flex-col md:flex-row gap-10 justify-between text-center md:gap-30">
+
+        <div class="md:w-80 text-start">
+            <h1 class="text-2xl font-semibold cursor-pointer">BLOOM<span class="text-amber-500">SHOP</span></h1>
+            <p class="text-gray-700">Discover unique products that inspire your lifestyle. Quality craftsmanship
+                meets modern design.</p>
+            <span class="block my-2 text-sm text-gray-600"><i class="ri-map-pin-line text-amber-400 mx-2"></i>123
+                Fashion Street, Style City, SC 12345</span>
+            <span class="block my-2 text-sm text-gray-600"><i class="ri-phone-line text-amber-400 mx-2"></i>+1 (555)
+                123-4567</span>
+            <span class="block my-2 text-sm text-gray-600"><i class="ri-mail-line text-amber-400 mx-2"></i>123
+                hello@bloomshop.com</span>
+
+            <!-- icons  -->
+
+            <div class="icons">
+                <ul class="flex md:gap-7 gap-3 text-gray-800">
+                    <li class="hover:bg-amber-500 rounded-4xl bg-gray-50">
+                        <i class="ri-facebook-fill"></i>
+                    </li>
+                    <li class="hover:bg-amber-500 rounded-4xl bg-gray-50">
+                        <i class="fa-brands fa-twitter"></i>
+                    </li>
+                    <li class="hover:bg-amber-500 rounded-4xl bg-gray-50">
+                        <i class="fa-brands fa-instagram"></i>
+                    </li>
+                    <li class="hover:bg-amber-500 rounded-4xl bg-gray-50">
+                        <i class="fa-brands fa-github"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <ul class="text-gray-600 justify-around">
+                <li class="font-semibold text-black">
+                    SHOP
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">All Products</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">New Arrivals</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Sale</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Featured</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <ul class="text-gray-600 ">
+                <li class="font-semibold text-black ">
+                    CUSTOMER CARE
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Contact Us</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Help Center</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Shipping Info</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Returns & Exchanges</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="text-gray-600 ">
+                <li class="font-semibold text-black ">
+                    COMPANY
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">About Us</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Careers</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Blog</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Press</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="text-gray-600">
+                <li class="font-semibold text-black">
+                    LEGAL
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Privacy Policy</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Terms & Conditions</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Cookie Policy</a>
+                </li>
+                <li class="my-2 hover:text-black">
+                    <a href="#">Accessibility</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-14 mx-16 text-gray-300">
+
+    <!-- footer -->
+    <div class="flex flex-col md:flex-row justify-between mx-16">
+        <div class=" text-gray-700 text-sm mb-7">
+            <div class="max-w-100">© 2025 BloomShop™. Made with<i class="fa-solid fa-heart text-red-600"></i>
+                All Rights Reserved.
+                Developed by <span class="text-gray-700 font-semibold">Bloomtpl •</span> Distributed by <span
+                    class="text-gray-700 font-semibold">ThemeWagon</span>
+            </div>
+        </div>
+        <ul class="flex gap-6 text-gray-600 font-sm mb-3">
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+        </ul>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
